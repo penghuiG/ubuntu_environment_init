@@ -1,0 +1,19 @@
+network:
+  version: 2
+  ethernets:
+    eth0:
+      dhcp4: false
+      addresses:
+        - 192.168.0.72/24
+      # ❌ 不配默认路由
+      nameservers:
+        addresses: [8.8.8.8, 114.114.114.114]
+
+  wifis:
+    wlan0:
+      dhcp4: true
+      dhcp4-overrides:
+        route-metric: 100
+      access-points:
+        "唐伯虎点擦炮儿":
+          password: "1438043840@qq.com"
