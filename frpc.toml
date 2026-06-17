@@ -1,0 +1,20 @@
+# frpc.toml
+serverAddr = "47.100.126.39"
+serverPort = 7000
+auth.token = "YourStrongTokenHere"
+
+# ---- 示例1：穿透 SSH ----
+[[proxies]]
+name = "my_pi5"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 22
+remotePort = 6666
+
+# ---- 穿透本地 8000 → 服务器 8000 ----
+[[proxies]]
+name = "local_web_8000"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 8000
+remotePort = 8000
